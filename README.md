@@ -7,13 +7,13 @@ BBD_V2.sql : J'ai rédigé une BDD MySQL via l'UML qu'on avait fait auparavant, 
 Sinon pour l'orga du repertoire: 
 projet est structuré en plusieurs répertoires pour assurer une bonne séparation des responsabilités :
 
-modele/ : Contient les classes représentant les entités du projet (ex : Menage.java, Poubelle.java, Depot.java).
+- modele/ : Contient les classes représentant les entités du projet (ex : Menage.java, Poubelle.java, Depot.java).
 
-dao/ : Contient les classes gérant l’accès aux données via MySQL (ex : DepotDAO.java, MenageDAO.java).
+- dao/ : Contient les classes gérant l’accès aux données via MySQL (ex : DepotDAO.java, MenageDAO.java).
 
-service/ : Contient les classes gérant la logique métier du projet (ex : DepotService.java pour le calcul des points de fidélité).
+- service/ : Contient les classes gérant la logique métier du projet (ex : DepotService.java pour le calcul des points de fidélité).
 
-test/ : Contient les classes de test pour vérifier le bon fonctionnement des méthodes (ex : MainTest.java).
+- test/ : Contient les classes de test pour vérifier le bon fonctionnement des méthodes (ex : MainTest.java).
 
 
 
