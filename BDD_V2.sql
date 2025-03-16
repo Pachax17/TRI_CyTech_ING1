@@ -33,3 +33,39 @@ CREATE TABLE depot (
     FOREIGN KEY (idMenage) REFERENCES menage(id),
     FOREIGN KEY (idPoubelle) REFERENCES poubelle(id)
 );
+
+CREATE TABLE corbeille (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    idMenage INT NOT NULL,
+    FOREIGN KEY (idMenage) REFERENCES menage(id)
+);
+
+CREATE TABLE dechet (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    idCorbeille INT NOT NULL,
+    typeDechet ENUM('Plastique', 'Verre', 'Carton', 'Métal') NOT NULL,
+    poids FLOAT NOT NULL,
+    FOREIGN KEY (idCorbeille) REFERENCES corbeille(id) ON DELETE CASCADE
+);
+
+CREATE TABLE centre_de_tri (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(255) NOT NULL,
+    adresse VARCHAR(255)
+);
+
+CREATE TABLE contrat (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    idCommerce INT,
+    idCentreTri INT,
+    dateDebut DATE,
+    dateFin DATE,
+    FOREIGN KEY (idCommerce) REFERENCES commerce(id),
+    FOREIGN KEY (idCentreTri) REFERENCES centre_de_tri(id)
+);
+
+
+
+
+
+

@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecd428e1-7806-4fae-bf47-872f9e4f25f4" name="Changes" comment="" />
+    <list default="true" id="ecd428e1-7806-4fae-bf47-872f9e4f25f4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/dao/CorbeilleDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/DechetDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/PoubelleDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modele/CentreDeTri.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modele/Commerce.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modele/Contrat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modele/Corbeille.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modele/Dechet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BDD_V2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/BDD_V2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestConnexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestConnexion.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,9 +33,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2uPD0r7APFxEq1UZxKC278EwrOp" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -31,10 +44,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.MainTest.executor": "Run",
     "Application.TestConnexion.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "H:/Desktop/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0.jar",
     "onboarding.tips.debug.path": "H:/Desktop/S2/JAVA/TRI_CyTech_ING1/src/Main.java",
@@ -43,7 +57,20 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MainTest">
+    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.MainTest" />
+      <module name="TRI_CyTech_ING1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestConnexion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.TestConnexion" />
       <module name="TRI_CyTech_ING1" />
@@ -59,6 +86,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainTest" />
         <item itemvalue="Application.TestConnexion" />
       </list>
     </recent_temporary>
