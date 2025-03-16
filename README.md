@@ -1,8 +1,8 @@
 NOTE : connexion MySQL a été mise en place via JDBC (ConnexionBDD.java), MAIS elle pose problème. Tant que ce n’est pas résolu, les tests en base sont incertains.Je retesterai avc un autre serveur
 
-J'ai mis en place les divers classes qu'on avait établit en Java (j'ai fais leur get/set) je les ai potentellement mal implémanté et la pluspart des méthodes, j'en ai peut être oublié
+dans src\ : J'ai mis en place les divers classes qu'on avait établit en Java (j'ai fais leur get/set) je les ai potentellement mal implémanté et la pluspart des méthodes, j'en ai peut être oublié
 
-J'ai rédigé une BDD MySQL via l'UML qu'on avait fait auparavant, y'a des classe où je me suis peut etre Br genre commerce par exemple 
+BBD_V2.sql : J'ai rédigé une BDD MySQL via l'UML qu'on avait fait auparavant, y'a des classe où je me suis peut etre Br genre commerce par exemple 
 
 Sinon pour l'orga du repertoire: 
 projet est structuré en plusieurs répertoires pour assurer une bonne séparation des responsabilités :
