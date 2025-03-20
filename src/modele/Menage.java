@@ -1,70 +1,33 @@
-package modele;
+ackage modele;
 
-public class Menage {
-    private int id;
-    private String nom;
-    private String prenom;
-    private String email;
-    private String motDePasse;
-    private int pointsFidelite;
+import java.util.Date;
 
-    public Menage(int id, String nom, String prenom, String email, String motDePasse, int pointsFidelite) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.email = email;
-        this.motDePasse = motDePasse;
-        this.pointsFidelite = pointsFidelite;
+public class Depot {
+    private int idPoubelle;
+    private Date heureDepot;
+    private TypeDechets dechets;
+    private int quantiteDechets;
+    private int pointsParDepot;
+
+    public Depot(int idPoubelle, Date heureDepot, TypeDechets dechets, int quantiteDechets) {
+        this.idPoubelle = idPoubelle;
+        this.heureDepot = heureDepot;
+        this.dechets = dechets;
+        this.quantiteDechets = quantiteDechets;
+        this.pointsParDepot = calculerPoidsTotal();
     }
 
-    // Getters et setters
-
-
-    public int getId() {
-        return id;
+    public void ajouterDechet(TypeDechets dechet, int quantite) {
+        this.dechets = dechet;
+        this.quantiteDechets += quantite;
+        this.pointsParDepot = calculerPoidsTotal();
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int calculerPoidsTotal() {
+        return this.dechets.getPoids() * this.quantiteDechets;
     }
 
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getMotDePasse() {
-        return motDePasse;
-    }
-
-    public void setMotDePasse(String motDePasse) {
-        this.motDePasse = motDePasse;
-    }
-
-    public int getPointsFidelite() {
-        return pointsFidelite;
-    }
-
-    public void setPointsFidelite(int pointsFidelite) {
-        this.pointsFidelite = pointsFidelite;
+    public int getPointsParDepot() {
+        return pointsParDepot;
     }
 }
