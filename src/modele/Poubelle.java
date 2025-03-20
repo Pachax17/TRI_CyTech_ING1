@@ -1,70 +1,38 @@
 package modele;
 
-public class Poubelle {
-    private int id;
-    private String type;  // Verre, Plastique, Carton, Métal, Classique
-    private double capaciteMax;
-    private double remplissage;
+public class PoubelleIntelligente {
+    private int identifiantUnique;
+    private int capaciteMaximale;
+    private TypePoubelle typePoubelle;
     private double latitude;
     private double longitude;
+    private Menage idMenage;
 
-    public Poubelle(int id, String type, double capaciteMax, double latitude, double longitude) {
-        this.id = id;
-        this.type = type;
-        this.capaciteMax = capaciteMax;
-        this.latitude = latitude;
-        this.longitude = longitude;
-        this.remplissage = 0;  // Initialisation vide
+    public PoubelleIntelligente(int id, int capacite, TypePoubelle type, double lat, double lon) {
+        this.identifiantUnique = id;
+        this.capaciteMaximale = capacite;
+        this.typePoubelle = type;
+        this.latitude = lat;
+        this.longitude = lon;
     }
 
-    // Getters et setters
-
-
-    public int getId() {
-        return id;
+    public void identifierMenage(Menage menage) {
+        this.idMenage = menage;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int calculerQuantiteDechet(Depot depot) {
+        return depot.calculerPoidsTotal();
     }
 
-    public String getType() {
-        return type;
+    public void attribuerPointsFidelite(Menage menage, int points) {
+        menage.ajouterPoints(points);
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void notifierCentreTri(CentreDeTri centre) {
+        System.out.println("Notification envoyée au centre de tri : " + centre.getNom());
     }
 
-    public double getCapaciteMax() {
-        return capaciteMax;
-    }
-
-    public void setCapaciteMax(double capaciteMax) {
-        this.capaciteMax = capaciteMax;
-    }
-
-    public double getRemplissage() {
-        return remplissage;
-    }
-
-    public void setRemplissage(double remplissage) {
-        this.remplissage = remplissage;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
+    public boolean verifierContrainteDechets(Depot depot) {
+        return depot.calculerPoidsTotal() <= this.capaciteMaximale;
     }
 }
