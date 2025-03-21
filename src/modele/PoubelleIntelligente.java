@@ -35,4 +35,6 @@ public class PoubelleIntelligente {
     public boolean verifierContrainteDechets(Depot depot) {
         return depot.calculerPoidsTotal() <= this.capaciteMaximale;
     }
+
+    //PAUL ADD FONCTION estDansSecteur ETC POUR VERIF 
 }
