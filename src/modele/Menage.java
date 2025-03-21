@@ -1,33 +1,38 @@
-package modele;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.Date;
+public class Menage {
+    private int id;
+    private int codeAcces;
+    private int nombrePointsFidelite;
+    private List<Depot> historiqueDepots;
 
-public class Depot {
-    private int idPoubelle;
-    private Date heureDepot;
-    private TypeDechets dechets;
-    private int quantiteDechets;
-    private int pointsParDepot;
-
-    public Depot(int idPoubelle, Date heureDepot, TypeDechets dechets, int quantiteDechets) {
-        this.idPoubelle = idPoubelle;
-        this.heureDepot = heureDepot;
-        this.dechets = dechets;
-        this.quantiteDechets = quantiteDechets;
-        this.pointsParDepot = calculerPoidsTotal();
+    public Menage(int id, int codeAcces) {
+        this.id = id;
+        this.codeAcces = codeAcces;
+        this.nombrePointsFidelite = 0;
+        this.historiqueDepots = new ArrayList<>();
     }
 
-    public void ajouterDechet(TypeDechets dechet, int quantite) {
-        this.dechets = dechet;
-        this.quantiteDechets += quantite;
-        this.pointsParDepot = calculerPoidsTotal();
+    public void deposerDechets(PoubelleIntelligente poubelle, Depot depot) {
+        if (poubelle.verifierContrainteDechets(depot)) {
+            historiqueDepots.add(depot);
+            int points = depot.getPointsParDepot();
+            ajouterPoints(points);
+        }
     }
 
-    public int calculerPoidsTotal() {
-        return this.dechets.getPoids() * this.quantiteDechets;
+    public int consulterPointsFidelite() {
+        return nombrePointsFidelite;
     }
 
-    public int getPointsParDepot() {
-        return pointsParDepot;
+    public void ajouterPoints(int points) {
+        this.nombrePointsFidelite += points;
+    }
+
+    public BonAchat convertirPointsEnBonAchat() {
+        int valeurBon = nombrePointsFidelite / 10; // Exemple : 10 points = 1 unité de bon d'achat
+        nombrePointsFidelite -= valeurBon * 10;
+        return new BonAchat(valeurBon);
     }
 }
