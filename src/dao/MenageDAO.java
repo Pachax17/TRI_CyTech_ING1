@@ -6,7 +6,7 @@ import java.sql.*;
 public class MenageDAO {
     public static void ajouterMenage(Menage menage) {
         Connection conn = ConnexionBDD.getConnexion();
-        String sql = "INSERT INTO menage (nom, prenom, email, motDePasse, pointsFidelite) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO menage (nom, motDePasse, pointsFidelite) VALUES (?, ?, ?)";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, menage.getNom());
             //stmt.setString(2, menage.getPrenom());

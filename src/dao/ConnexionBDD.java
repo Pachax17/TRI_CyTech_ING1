@@ -5,8 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnexionBDD {
-    private static final String URL = "jdbc:mysql://localhost:3306/Projet_Java_Tri";
-    private static final String USER = "student-laptop"; // Remplace par ton utilisateur MySQL
+    private static final String URL = "jdbc:mysql://localhost:3306/projetjava";
+    private static final String USER = "root"; // Remplace par ton utilisateur MySQL
     private static final String PASSWORD = ""; // Remplace par ton mot de passe MySQL
 
     public static Connection getConnexion() {

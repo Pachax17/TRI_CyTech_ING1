@@ -2,6 +2,7 @@ package modele;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.*;
 
 public class CentreDeTri {
     private String nom;
@@ -10,6 +11,7 @@ public class CentreDeTri {
     private double latitude;
     private double longitude;
     private double rayonSecteur;
+    private Map<Date, Map<String, Double>> historiqueDechets = new HashMap<>();
     private List<PoubelleIntelligente> poubelles;
 
     public CentreDeTri(String nom, String adresse, int id, double latitude, double longitude, double rayonSecteur) {
@@ -44,14 +46,37 @@ public class CentreDeTri {
 
     public void retirerPoubelle(PoubelleIntelligente poubelle) {
         poubelles.remove(poubelle);
+        System.out.println("Poubelle retirée du Centre de Tri : " + nom);
     }
 
     public void collecterDechets() {
-        System.out.println("Collecte en cours...");
+        for (PoubelleIntelligente poubelle : poubelles) {
+            if (poubelle.estPleine()) {
+                Map<String, Double> dechetsCollectes = poubelle.viderPoubelle();
+                System.out.println("Déchets collectés de la poubelle " + poubelle.getId() + " : " + dechetsCollectes);
+            }
+        }
     }
 
-    public void genererStatistiques() {
-        System.out.println("Génération des statistiques de tri...");
+    public void genererStatistiques(Date dateDebut, Date dateFin) {
+        Map<String, Double> statistiques = new HashMap<>();
+
+        for (Map.Entry<Date, Map<String, Double>> entry : historiqueDechets.entrySet()) {
+            Date dateCollecte = entry.getKey();
+            if (dateCollecte.after(dateDebut) && dateCollecte.before(dateFin)) {
+                Map<String, Double> dechetsCollectes = entry.getValue();
+                for (Map.Entry<String, Double> dechet : dechetsCollectes.entrySet()) {
+                    String typeDechet = dechet.getKey();
+                    double quantite = dechet.getValue();
+                    statistiques.put(typeDechet, statistiques.getOrDefault(typeDechet, 0.0) + quantite);
+                }
+            }
+        }
+
+        System.out.println("Statistiques de production/récupération de déchets du " + dateDebut + " au " + dateFin + " :");
+        for (Map.Entry<String, Double> stat : statistiques.entrySet()) {
+            System.out.println("Type de déchet: " + stat.getKey() + ", Quantité: " + stat.getValue());
+        }
     }
 
 

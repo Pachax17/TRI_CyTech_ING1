@@ -30,4 +30,42 @@ public class Depot {
     public int getPointsParDepot() {
         return pointsParDepot;
     }
+
+
+    // GET SET
+    public int getIdPoubelle() {
+        return idPoubelle;
+    }
+
+    public void setIdPoubelle(int idPoubelle) {
+        this.idPoubelle = idPoubelle;
+    }
+
+    public Date getHeureDepot() {
+        return heureDepot;
+    }
+
+    public void setHeureDepot(Date heureDepot) {
+        this.heureDepot = heureDepot;
+    }
+
+    public TypeDechets getDechets() {
+        return dechets;
+    }
+
+    public void setDechets(TypeDechets dechets) {
+        this.dechets = dechets;
+    }
+
+    public int getQuantiteDechets() {
+        return quantiteDechets;
+    }
+
+    public void setQuantiteDechets(int quantiteDechets) {
+        this.quantiteDechets = quantiteDechets;
+    }
+
+    public void setPointsParDepot(int pointsParDepot) {
+        this.pointsParDepot = pointsParDepot;
+    }
 }
