@@ -1,32 +1,69 @@
 package dao;
 
-import modele.Poubelle;
-import modele.CentreDeTri;
+import modele.PoubelleIntelligente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+import modele.TypePoubelle;
 
 public class PoubelleDAO {
 
-    // Affecte une poubelle au bon centre de tri
-    public static void affecterPoubelle(Poubelle poubelle, List<CentreDeTri> centres) {
-        for (CentreDeTri centre : centres) {
-            if (centre.estDansSecteur(poubelle)) {
-                Connection conn = ConnexionBDD.getConnexion();
-                String sql = "UPDATE poubelle SET idCentreTri = ? WHERE id = ?";
+    // Ajouter une poubelle en base de données
+    public static void ajouterPoubelle(PoubelleIntelligente poubelle) {
+        Connection conn = ConnexionBDD.getConnexion();
+        String sql = "INSERT INTO poubelle_intelligente (id, capaciteMax, latitude, longitude) VALUES (?, ?, ?, ?)";
 
-                try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-                    stmt.setInt(1, centre.getId());
-                    stmt.setInt(2, poubelle.getId());
-                    stmt.executeUpdate();
-                    System.out.println("Poubelle " + poubelle.getId() + " affectée au Centre " + centre.getNom());
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                return; // Sortir dès qu'un centre est trouvé
-            }
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, poubelle.getId());
+            stmt.setDouble(2, poubelle.getCapaciteMaximale());
+            stmt.setDouble(3, poubelle.getLatitude());
+            stmt.setDouble(4, poubelle.getLongitude());
+            stmt.executeUpdate();
+            System.out.println("✅ Poubelle ajoutée en base !");
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        System.out.println("Aucune affectation possible pour la poubelle " + poubelle.getId());
+    }
+
+    // Récupérer une poubelle par son ID
+    public static PoubelleIntelligente getPoubelleById(int id) {
+        Connection conn = ConnexionBDD.getConnexion();
+        String sql = "SELECT * FROM poubelle_intelligente WHERE id = ?";
+        PoubelleIntelligente poubelle = null;
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                poubelle = new PoubelleIntelligente(
+                        rs.getInt("id"),
+                        rs.getInt("capaciteMax"),
+                        TypePoubelle.valueOf(rs.getString("TypePoubelle")),
+
+                        rs.getDouble("latitude"),
+                        rs.getDouble("longitude")
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return poubelle;
+    }
+
+    // Supprimer une poubelle
+    public static void supprimerPoubelle(int id) {
+        Connection conn = ConnexionBDD.getConnexion();
+        String sql = "DELETE FROM poubelle_intelligente WHERE id = ?";
+
+        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+            System.out.println("✅ Poubelle supprimée de la base !");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
+

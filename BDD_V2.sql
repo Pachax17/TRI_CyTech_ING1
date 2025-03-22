@@ -13,14 +13,14 @@ CREATE TABLE menage (
 );
 
 
-CREATE TABLE poubelle (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    typePoubelle ENUM('Verre', 'Plastique', 'Carton', 'Métal', 'Classique'),
-    capaciteMax FLOAT,
-    remplissage FLOAT DEFAULT 0,
-    latitude DECIMAL(9,6),
-    longitude DECIMAL(9,6)
+CREATE TABLE poubelle_intelligente (
+    id INT PRIMARY KEY,
+    capaciteMax DOUBLE NOT NULL,
+    TypePoubelle ENUM('BLEUE', 'JAUNE', 'VERTE', 'CLASSIQUE') NOT NULL,
+    latitude DOUBLE NOT NULL,
+    longitude DOUBLE NOT NULL
 );
+
 
 CREATE TABLE depot (
     id INT AUTO_INCREMENT PRIMARY KEY,

@@ -3,9 +3,9 @@ package modele;
 public class Commerce {
     private String nom;
     private int id;
-    private ContratDePartenariat contrat;
+    private Contrat contrat;
 
-    public Commerce(String nom, int id, ContratDePartenariat contrat) {
+    public Commerce(String nom, int id, Contrat contrat) {
         this.nom = nom;
         this.id = id;
         this.contrat = contrat;

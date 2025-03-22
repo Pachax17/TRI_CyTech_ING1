@@ -9,10 +9,10 @@ public class MenageDAO {
         String sql = "INSERT INTO menage (nom, prenom, email, motDePasse, pointsFidelite) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, menage.getNom());
-            stmt.setString(2, menage.getPrenom());
-            stmt.setString(3, menage.getEmail());
-            stmt.setString(4, menage.getMotDePasse());
-            stmt.setInt(5, menage.getPointsFidelite());
+            //stmt.setString(2, menage.getPrenom());
+            //stmt.setString(3, menage.getEmail());
+            stmt.setString(4, menage.getCodeAcces());
+            stmt.setInt(5, menage.getNombrePointsFidelite());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
