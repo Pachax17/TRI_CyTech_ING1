@@ -20,8 +20,8 @@ y'a 2/3 fichier superflus, c'est les 1er rendus qu'on avait fait
 //
 
 -Commerce me semble fonctionnelle niveau méthodes.
--Depot aussi, mais je comprends pas la methode ajouterDechet: erreur? Si il n'y a pas d autres methodes a ajt, ca me parait ok.
+-Depot aussi, mais je comprends pas la methode ajouterDechet: erreur? (je crois je comprends juste pas bien)Si il n'y a pas d autres methodes a ajt, ca me parait ok.
 -BonAchat me parait ok aussi.
--Contrat aussi, pas de méthode.
+-Contrat aussi, méthode renouveler ajt que sur ton pc mais je crois qu elle est fonctionnelle.
 
 
