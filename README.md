@@ -21,4 +21,5 @@ y'a 2/3 fichier superflus, c'est les 1er rendus qu'on avait fait
 
 -Commerce me semble fonctionnelle niveau méthodes.
 -Depot aussi, mais je comprends pas la methode ajouterDechet: erreur? Si il n'y a pas d autres methodes a ajt, ca me parait ok.
--
+-BonAchat me parait ok aussi.
+
