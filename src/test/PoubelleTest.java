@@ -1,38 +1,42 @@
 package test;
 
-import modele.PoubelleIntelligente;
-import modele.TypePoubelle;
-import modele.Menage;
-import modele.Depot;
-import modele.TypeDechets;
+import modele.*;
 
+import java.util.Date;
 
 public class PoubelleTest {
     public static void main(String[] args) {
-        System.out.println("Début du test PoubelleIntelligente...");
-
         // Création d'une poubelle intelligente
-        PoubelleIntelligente poubelle = new PoubelleIntelligente(1, 50, TypePoubelle.JAUNE, 48.8566, 2.3522);
-        System.out.println("✅ Poubelle créée : " + poubelle.getTypePoubelle());
+        PoubelleIntelligente poubelle = new PoubelleIntelligente(1, 100, TypePoubelle.JAUNE, 48.85, 2.35);
+        System.out.println("✅ Poubelle créée avec ID : " + poubelle.getId());
 
-        // Identification d'un ménage
-        Menage menage = new Menage(1, "MOMO", "1234");
+        // Vérification des getters
+        System.out.println("Capacité max : " + poubelle.getCapaciteMaximale());
+        System.out.println("Type : " + poubelle.getTypePoubelle());
+        System.out.println("Position : (" + poubelle.getLatitude() + ", " + poubelle.getLongitude() + ")");
+
+        // Création d'un ménage
+        Menage menage = new Menage(10, "Famille Martin", "XYZ123");
         poubelle.identifierMenage(menage);
-        System.out.println("✅ Ménage identifié : " + poubelle.getIdMenage().getId());
+        System.out.println("Ménage identifié : " + poubelle.getIdMenage().getNom());
 
-        // Vérification de la contrainte de déchets
-        Depot depot = new Depot(1, null, TypeDechets.PAPIER, 55); // Simule un dépôt
-        boolean contrainteRespectee = poubelle.verifierContrainteDechets(depot);
-        System.out.println("✅ Vérification de la contrainte de déchets : " + contrainteRespectee);
+        // Création d’un dépôt conforme
+        TypeDechets plastique = TypeDechets.PLASTIQUE; // doit correspondre à JAUNE
+        Depot depotConforme = new Depot(poubelle.getId(), new Date(), plastique, 12);
+        boolean estConforme = poubelle.verifierConformite(depotConforme);
+        System.out.println("✅ Vérification conformité (attendu: true) : " + estConforme);
 
-        // Attribution de points fidélité
-        poubelle.attribuerPointsFidelite(menage, 10);
-        System.out.println("✅ Points fidélité attribués. Nouveau total : " + menage.consulterPointsFidelite());
+        // Calcul du poids du dépôt
+        int poids = poubelle.calculerQuantiteDechet(depotConforme);
+        System.out.println("Poids du dépôt : " + poids + "kg");
 
-        // Notification du centre de tri
-        // CentreDeTri centre = new CentreDeTri(1, "Centre Paris", 48.8566, 2.3522, 0.02);
-        // poubelle.notifierCentreTri(centre);
+        // Attribution de points
+        int pointsAttribues = 8;
+        poubelle.attribuerPointsFidelite(menage, pointsAttribues);
+        System.out.println("Points fidélité après attribution : " + menage.consulterPointsFidelite());
 
-        System.out.println("Test terminé.");
+        // Création et notification d’un centre de tri
+        CentreDeTri centre = new CentreDeTri("Centre Ouest", 2.35, 48.85);
+        poubelle.notifierCentreTri(centre);
     }
 }
