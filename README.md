@@ -11,8 +11,6 @@ projet est structuré en plusieurs répertoires pour assurer une bonne séparati
 
 - dao/ : Contient les classes gérant l’accès aux données via MySQL (ex : DepotDAO.java, MenageDAO.java).
 
-- service/ : Contient les classes gérant la logique métier du projet (ex : DepotService.java pour le calcul des points de fidélité).
-
 - test/ : Contient les classes de test pour vérifier le bon fonctionnement des méthodes (ex : MainTest.java).
 
 
