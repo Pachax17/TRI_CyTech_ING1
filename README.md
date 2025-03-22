@@ -34,6 +34,7 @@ y'a 2/3 fichier superflus, c'est les 1er rendus qu'on avait fait
 
 -CatProduit: on a mis une methode qui a l air fonctionnelle.
 
+-Poubelle probleme: ok j espere.
 
 -->Test+dao a faire:
 
@@ -43,3 +44,6 @@ y'a 2/3 fichier superflus, c'est les 1er rendus qu'on avait fait
 -Contrat aussi, méthode renouveler ajt que sur ton pc mais je crois qu elle est fonctionnelle.
 
 -Poubelle probleme: t'as fait une fonction verifContrainte alors que c'est verifComformité.
+
+
+Du coup j espere toutes les methodes de ceux que j ai fait sont fonctionnelles, que les tests et les dao englobent bien tout, j ai pas teste avec la bdd psk j ai pas reussi a connecter j te laisse faire.
