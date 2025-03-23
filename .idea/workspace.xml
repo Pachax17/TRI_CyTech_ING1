@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecd428e1-7806-4fae-bf47-872f9e4f25f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dao/CentreDeTriDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/dao/ContratDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/BonAchatDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/CategorieProduitDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/CentreDeTriDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/CommerceDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/ContratDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/DepotDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/MenageDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/BonAchatDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BonAchatDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/CommerceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/CommerceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/DepotDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DepotDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/MenageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/MenageDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/PoubelleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PoubelleDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/BonAchat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/BonAchat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Depot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Depot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Menage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Menage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/PoubelleIntelligente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/PoubelleIntelligente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/TypeDechets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/TypeDechets.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/TypePoubelle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/TypePoubelle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/BonAchatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/BonAchatTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/CentreDeTriTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CentreDeTriTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/CommerceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CommerceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/DepotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/DepotTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/MainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/MenageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/MenageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/PoubelleDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PoubelleDAOTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="ecd428e1-7806-4fae-bf47-872f9e4f25f4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
