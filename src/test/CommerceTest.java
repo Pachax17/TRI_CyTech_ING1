@@ -17,7 +17,7 @@ public class CommerceTest {
         Contrat contrat = new Contrat(debut, fin, "10% sur produits bio", 101);
         Commerce commerce = new Commerce("BioMag", 1, contrat);
 
-        Menage menage = new Menage(1, "Famille Dupont", "ABC123");
+        Menage menage = new Menage(1, "Famille Durand", "1234");
         menage.ajouterPoints(120);
 
         commerce.appliquerReduction(menage, 20);

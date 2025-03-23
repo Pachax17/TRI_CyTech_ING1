@@ -5,30 +5,37 @@ import java.util.Date;
 public class Depot {
     private int idPoubelle;
     private Date heureDepot;
-    private TypeDechets dechets;
+    private TypeDechets typeDechets;
     private int quantiteDechets;
     private int pointsParDepot;
 
-    public Depot(int idPoubelle, Date heureDepot, TypeDechets dechets, int quantiteDechets) {
+    public Depot(int idPoubelle, Date heureDepot, TypeDechets typeDechets, int quantiteDechets) {
         this.idPoubelle = idPoubelle;
-        this.heureDepot = heureDepot;
-        this.dechets = dechets;
+        this.heureDepot = heureDepot != null ? heureDepot : new Date();
+        this.typeDechets = (typeDechets != null) ? typeDechets : TypeDechets.AUTRES;
         this.quantiteDechets = quantiteDechets;
         this.pointsParDepot = calculerPoidsTotal();
     }
 
     public void ajouterDechet(TypeDechets dechet, int quantite) {
-        this.dechets = dechet;
+        this.typeDechets = dechet;
         this.quantiteDechets += quantite;
         this.pointsParDepot = calculerPoidsTotal();
     }
 
     public int calculerPoidsTotal() {
-        return this.dechets.getPoids() * this.quantiteDechets;
+        if (typeDechets == null) { // Évite l'erreur en cas de `null`
+            throw new IllegalArgumentException("Type de déchet non défini !");
+        }
+        return quantiteDechets * typeDechets.getPoids();
     }
 
     public int getPointsParDepot() {
         return pointsParDepot;
+    }
+
+    public TypeDechets getTypeDechet() {
+        return typeDechets;
     }
 
 
@@ -50,11 +57,11 @@ public class Depot {
     }
 
     public TypeDechets getDechets() {
-        return dechets;
+        return typeDechets;
     }
 
     public void setDechets(TypeDechets dechets) {
-        this.dechets = dechets;
+        this.typeDechets = dechets;
     }
 
     public int getQuantiteDechets() {

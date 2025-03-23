@@ -13,8 +13,8 @@ public class PoubelleDAO {
         this.connection = connection;
     }
 
-    public void inserer(PoubelleIntelligente poubelle) throws SQLException {
-        String sql = "INSERT INTO poubelle (id, capacite, type, latitude, longitude) VALUES (?, ?, ?, ?, ?)";
+    public void ajouterPoubelle(PoubelleIntelligente poubelle) throws SQLException {
+        String sql = "INSERT INTO poubelle_intelligente (id, capaciteMax, type_poubelle, latitude, longitude) VALUES (?, ?, ?, ?, ?)";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setInt(1, poubelle.getId());
             stmt.setInt(2, poubelle.getCapaciteMaximale());
@@ -26,13 +26,13 @@ public class PoubelleDAO {
     }
 
     public PoubelleIntelligente recupererParId(int id) throws SQLException {
-        String sql = "SELECT * FROM poubelle WHERE id = ?";
+        String sql = "SELECT * FROM poubelle_intelligente  WHERE id = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
-                int capacite = rs.getInt("capacite");
-                TypePoubelle type = TypePoubelle.valueOf(rs.getString("type"));
+                int capacite = rs.getInt("capaciteMax");
+                TypePoubelle type = TypePoubelle.valueOf(rs.getString("type_poubelle"));
                 double latitude = rs.getDouble("latitude");
                 double longitude = rs.getDouble("longitude");
 
@@ -40,5 +40,14 @@ public class PoubelleDAO {
             }
         }
         return null;
+    }
+
+    // ✅ Ajout d'une méthode pour supprimer une poubelle
+    public void supprimerPoubelle(int id) throws SQLException {
+        String sql = "DELETE FROM poubelle_intelligente  WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            stmt.executeUpdate();
+        }
     }
 }

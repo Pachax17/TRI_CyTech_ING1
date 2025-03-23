@@ -40,15 +40,24 @@ CREATE TABLE IF NOT EXISTS centre_de_tri (
 );
 
 -- Table Categorie Produit
-CREATE TABLE IF NOT EXISTS categorie_produit (
+CREATE TABLE categorie_produit (
+    nom VARCHAR(250) PRIMARY KEY
+);
+
+CREATE TABLE reduction (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    nom VARCHAR(255) NOT NULL
+    categorie_nom VARCHAR(255),
+    points INT NOT NULL,
+    pourcentage DOUBLE NOT NULL,
+    FOREIGN KEY (categorie_nom) REFERENCES categorie_produit(nom) ON DELETE CASCADE
 );
 
 -- Table Bon d'Achat
-CREATE TABLE IF NOT EXISTS bon_achat (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    valeur INT NOT NULL
+CREATE TABLE bon_achat (
+    id INT AUTO_INCREMENT PRIMARY KEY, -- ID auto-incrémenté
+    valeur INT NOT NULL,
+    id_menage INT NOT NULL, -- Référence au ménage
+    FOREIGN KEY (id_menage) REFERENCES menage(id) ON DELETE CASCADE
 );
 
 -- Table Contrat de Partenariat
@@ -62,10 +71,12 @@ CREATE TABLE IF NOT EXISTS contrat_partenariat (
 
 
 CREATE TABLE IF NOT EXISTS commerce (
-   id INT AUTO_INCREMENT PRIMARY KEY,
-   nom VARCHAR(255) NOT NULL,
-   FOREIGN KEY (id) REFERENCES contrat_partenariat(id) ON DELETE CASCADE
+    id INT AUTO_INCREMENT PRIMARY KEY, -- ID auto-incrémenté
+    nom VARCHAR(255) NOT NULL,
+    id_contrat INT NOT NULL, -- Référence vers la table contrat
+    FOREIGN KEY (id_contrat) REFERENCES contrat(id) ON DELETE CASCADE
 );
+
 
 
 

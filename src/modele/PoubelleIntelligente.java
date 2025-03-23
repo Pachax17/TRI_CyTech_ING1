@@ -43,9 +43,25 @@ public class PoubelleIntelligente {
         return depot.calculerPoidsTotal() <= this.capaciteMaximale;
     }
 
-    //PAUL ADD FONCTION estDansSecteur ETC POUR VERIF
+    public boolean verifierConformite(Depot depotConforme) {
+        TypeDechets typeDechet = depotConforme.getTypeDechet();
 
-    // add donction estPleine  / viderPoubelle
+        switch (this.typePoubelle) {
+            case BLEUE:
+                return typeDechet == TypeDechets.PAPIER || typeDechet == TypeDechets.CARTON;
+            case VERTE:
+                return typeDechet == TypeDechets.VERRE;
+            case JAUNE:
+                return typeDechet == TypeDechets.PLASTIQUE || typeDechet == TypeDechets.METAL;
+            case CLASSIQUE:
+                return typeDechet == TypeDechets.AUTRES;
+            default:
+                return false;
+        }
+    }
+
+
+
 
     public boolean estPleine() {
         int totalDechets = 0;

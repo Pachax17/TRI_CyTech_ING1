@@ -2,6 +2,11 @@ package modele;
 
 import java.util.ArrayList;
 import java.util.List;
+import dao.BonAchatDAO;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
 
 public class Menage {
     private int id;
@@ -36,10 +41,19 @@ public class Menage {
     }
 
 
-    public BonAchat convertirPointsEnBonAchat() {
-        int valeurBon = nombrePointsFidelite / 10; // Exemple : 10 points = 1 unité de bon d'achat
-        nombrePointsFidelite -= valeurBon * 10;
-        return new BonAchat(valeurBon);
+    public BonAchat convertirPointsEnBonAchat(Connection connection) throws SQLException {
+        int valeurBon = this.nombrePointsFidelite / 10; // Exemple : 10 points = 1 unité de bon d'achat
+        this.nombrePointsFidelite -= valeurBon * 10; // Déduire les points utilisés
+
+        // Créer le bon d'achat
+        BonAchat bonAchat = new BonAchat(valeurBon, this);
+
+        // Insérer le bon d'achat dans la base de données
+        BonAchatDAO bonAchatDAO = new BonAchatDAO(connection);
+        int idBonAchat = bonAchatDAO.insertBonAchat(bonAchat);
+        System.out.println("✅ Bon d'achat de " + valeurBon + " points créé pour le ménage : " + this.id);
+
+        return bonAchat;
     }
 
     // GET SET

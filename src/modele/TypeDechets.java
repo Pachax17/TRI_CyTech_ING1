@@ -17,4 +17,20 @@ public enum TypeDechets {
     public int getPoids() {
         return poids;
     }
+
+    // Convertit un String en TypeDechets
+    public static TypeDechets fromNom(String nom) {
+        for (TypeDechets type : TypeDechets.values()) {
+            if (type.name().equalsIgnoreCase(nom)) {
+                return type;
+            }
+        }
+        throw new IllegalArgumentException("Type de déchet inconnu : " + nom);
+    }
+
+    @Override
+    public String toString() {
+        return this.name();
+    }
+
 }

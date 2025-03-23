@@ -5,6 +5,8 @@ public enum TypePoubelle {
     VERTE,
     JAUNE,
     CLASSIQUE;
+
+
 }
 
 

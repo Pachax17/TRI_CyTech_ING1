@@ -5,18 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecd428e1-7806-4fae-bf47-872f9e4f25f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/dao/DepotDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/CentreDeTriDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/ContratDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/BonAchatDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/CategorieProduitDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/CentreDeTriDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/CommerceDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/ContratDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/DepotDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/MenageDAOTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/BonAchatDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BonAchatDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/CategorieProduitDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/CategorieProduitDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/CommerceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/CommerceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/DepotDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/DepotDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/MenageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/MenageDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dao/PoubelleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PoubelleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/BonAchat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/BonAchat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/Depot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Depot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/Menage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Menage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/PoubelleIntelligente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/PoubelleIntelligente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/TypeDechets.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/TypeDechets.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/TypePoubelle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/TypePoubelle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/BonAchatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/BonAchatTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/CategorieProduitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CategorieProduitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/CentreDeTriTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CentreDeTriTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/CommerceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CommerceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/DepotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/DepotTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/MainTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/MenageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/MenageTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/PoubelleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PoubelleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/PoubelleDAOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PoubelleDAOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,15 +62,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.BonAchatDAOTest.executor": "Run",
+    "Application.BonAchatTest.executor": "Run",
+    "Application.CategorieProduitDAOTest.executor": "Run",
+    "Application.CategorieProduitTest.executor": "Run",
+    "Application.CentreDeTriDAOTest.executor": "Run",
+    "Application.CentreDeTriTest.executor": "Run",
+    "Application.CommerceDAOTest.executor": "Run",
+    "Application.CommerceTest.executor": "Run",
+    "Application.ContratDAOTest.executor": "Run",
     "Application.ContratTest.executor": "Run",
+    "Application.DepotDAOTest.executor": "Run",
+    "Application.DepotTest.executor": "Run",
     "Application.MainTest.executor": "Run",
+    "Application.MenageDAOTest.executor": "Run",
     "Application.MenageTest.executor": "Run",
     "Application.PoubelleDAOTest.executor": "Run",
     "Application.PoubelleTest.executor": "Run",
     "Application.TestConnexion.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "H:/Desktop/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0.jar",
     "onboarding.tips.debug.path": "H:/Desktop/S2/JAVA/TRI_CyTech_ING1/src/Main.java",
@@ -63,9 +91,48 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.PoubelleTest">
-    <configuration name="ContratTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.ContratTest" />
+  <component name="RunManager" selected="Application.MainTest">
+    <configuration name="BonAchatDAOTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.BonAchatDAOTest" />
+      <module name="TRI_CyTech_ING1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BonAchatTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.BonAchatTest" />
+      <module name="TRI_CyTech_ING1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CategorieProduitDAOTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.CategorieProduitDAOTest" />
+      <module name="TRI_CyTech_ING1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="test.MainTest" />
       <module name="TRI_CyTech_ING1" />
       <extension name="coverage">
         <pattern>
@@ -90,52 +157,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PoubelleDAOTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.PoubelleDAOTest" />
-      <module name="TRI_CyTech_ING1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PoubelleTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.PoubelleTest" />
-      <module name="TRI_CyTech_ING1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestConnexion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="test.TestConnexion" />
-      <module name="TRI_CyTech_ING1" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PoubelleTest" />
-        <item itemvalue="Application.ContratTest" />
-        <item itemvalue="Application.PoubelleDAOTest" />
-        <item itemvalue="Application.TestConnexion" />
+        <item itemvalue="Application.MainTest" />
+        <item itemvalue="Application.CategorieProduitDAOTest" />
+        <item itemvalue="Application.BonAchatDAOTest" />
         <item itemvalue="Application.MenageTest" />
+        <item itemvalue="Application.BonAchatTest" />
       </list>
     </recent_temporary>
   </component>
@@ -171,8 +199,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/PoubelleDAOTest.java</url>
-          <line>20</line>
+          <line>13</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/MenageTest.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/CentreDeTriTest.java</url>
+          <line>8</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
