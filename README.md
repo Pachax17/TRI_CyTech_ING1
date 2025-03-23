@@ -16,3 +16,34 @@ projet est structuré en plusieurs répertoires pour assurer une bonne séparati
 
 
 y'a 2/3 fichier superflus, c'est les 1er rendus qu'on avait fait
+
+
+//
+
+
+-->Test+dao fait:
+
+
+-Commerce me semble fonctionnelle niveau méthodes.
+
+-Menage a l'air en place.
+
+-Depot aussi, mais je comprends pas la methode ajouterDechet:Si il n'y a pas d autres methodes a ajt, ca me parait ok.
+
+-BonAchat me parait ok aussi.
+
+-CatProduit: on a mis une methode qui a l air fonctionnelle.
+
+-Poubelle probleme: ok j espere.
+
+-->Test+dao a faire:
+
+
+-Centre de tri: c'est fonctionnel, juste a rajt genStats et collecterDechet.
+
+-Contrat aussi, méthode renouveler ajt que sur ton pc mais je crois qu elle est fonctionnelle.
+
+-Poubelle probleme: t'as fait une fonction verifContrainte alors que c'est verifComformité.
+
+
+Du coup j espere toutes les methodes de ceux que j ai fait sont fonctionnelles, que les tests et les dao englobent bien tout, j ai pas teste avec la bdd psk j ai pas reussi a connecter j te laisse faire.

@@ -1,69 +1,44 @@
 package dao;
 
 import modele.PoubelleIntelligente;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import modele.TypePoubelle;
+
+import java.sql.*;
 
 public class PoubelleDAO {
 
-    // Ajouter une poubelle en base de données
-    public static void ajouterPoubelle(PoubelleIntelligente poubelle) {
-        Connection conn = ConnexionBDD.getConnexion();
-        String sql = "INSERT INTO poubelle_intelligente (id, capaciteMax, latitude, longitude) VALUES (?, ?, ?, ?)";
+    private final Connection connection;
 
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+    public PoubelleDAO(Connection connection) {
+        this.connection = connection;
+    }
+
+    public void inserer(PoubelleIntelligente poubelle) throws SQLException {
+        String sql = "INSERT INTO poubelle (id, capacite, type, latitude, longitude) VALUES (?, ?, ?, ?, ?)";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setInt(1, poubelle.getId());
-            stmt.setDouble(2, poubelle.getCapaciteMaximale());
-            stmt.setDouble(3, poubelle.getLatitude());
-            stmt.setDouble(4, poubelle.getLongitude());
+            stmt.setInt(2, poubelle.getCapaciteMaximale());
+            stmt.setString(3, poubelle.getTypePoubelle().name());
+            stmt.setDouble(4, poubelle.getLatitude());
+            stmt.setDouble(5, poubelle.getLongitude());
             stmt.executeUpdate();
-            System.out.println("✅ Poubelle ajoutée en base !");
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
     }
 
-    // Récupérer une poubelle par son ID
-    public static PoubelleIntelligente getPoubelleById(int id) {
-        Connection conn = ConnexionBDD.getConnexion();
-        String sql = "SELECT * FROM poubelle_intelligente WHERE id = ?";
-        PoubelleIntelligente poubelle = null;
-
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
+    public PoubelleIntelligente recupererParId(int id) throws SQLException {
+        String sql = "SELECT * FROM poubelle WHERE id = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-
             if (rs.next()) {
-                poubelle = new PoubelleIntelligente(
-                        rs.getInt("id"),
-                        rs.getInt("capaciteMax"),
-                        TypePoubelle.valueOf(rs.getString("TypePoubelle")),
+                int capacite = rs.getInt("capacite");
+                TypePoubelle type = TypePoubelle.valueOf(rs.getString("type"));
+                double latitude = rs.getDouble("latitude");
+                double longitude = rs.getDouble("longitude");
 
-                        rs.getDouble("latitude"),
-                        rs.getDouble("longitude")
-                );
+                return new PoubelleIntelligente(id, capacite, type, latitude, longitude);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
-        return poubelle;
-    }
-
-    // Supprimer une poubelle
-    public static void supprimerPoubelle(int id) {
-        Connection conn = ConnexionBDD.getConnexion();
-        String sql = "DELETE FROM poubelle_intelligente WHERE id = ?";
-
-        try (PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setInt(1, id);
-            stmt.executeUpdate();
-            System.out.println("✅ Poubelle supprimée de la base !");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        return null;
     }
 }
-

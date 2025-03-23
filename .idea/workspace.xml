@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ecd428e1-7806-4fae-bf47-872f9e4f25f4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/PoubelleDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/ConnexionBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/ConnexionBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dao/MenageDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/MenageDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/BonAchat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/BonAchat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/CategorieProduit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/CategorieProduit.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/CentreDeTri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/CentreDeTri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Commerce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Commerce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Contrat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Contrat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Depot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Depot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Menage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Menage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/PoubelleIntelligente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/PoubelleIntelligente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/ContratTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ContratTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/dao/DepotDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/BonAchatDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/BonAchatDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/CategorieProduitDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/CategorieProduitDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/CommerceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/CommerceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dao/PoubelleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dao/PoubelleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/BonAchatTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/BonAchatTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/CategorieProduitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CategorieProduitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/CommerceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/CommerceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/DepotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/DepotTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/MenageTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/MenageTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/PoubelleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PoubelleTest.java" afterDir="false" />
     </list>
@@ -57,7 +54,7 @@
     "Application.TestConnexion.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "H:/Desktop/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0.jar",
     "onboarding.tips.debug.path": "H:/Desktop/S2/JAVA/TRI_CyTech_ING1/src/Main.java",
