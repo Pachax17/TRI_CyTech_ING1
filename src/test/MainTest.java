@@ -65,11 +65,11 @@ public class MainTest {
             CommerceDAOTest.main(args);
             System.out.println("\n Test CommerceDAOTest terminé.\n");
 
-            System.out.println(" Test 14 : BonAchatDAOTest");
+            System.out.println(" Test 15 : BonAchatDAOTest");
             BonAchatDAOTest.main(args);
             System.out.println("\n Test BonAchatDAOTest terminé.\n");
 
-            System.out.println(" Test 14 : CategorieProduitDAOTest");
+            System.out.println(" Test 16 : CategorieProduitDAOTest");
             CategorieProduitDAOTest.main(args);
             System.out.println("\n Test CategorieProduitDAOTestno terminé.\n");
 

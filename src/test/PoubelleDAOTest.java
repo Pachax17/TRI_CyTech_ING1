@@ -7,6 +7,7 @@ import dao.ConnexionBDD;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class PoubelleDAOTest {
     public static void main(String[] args) {
@@ -22,32 +23,40 @@ public class PoubelleDAOTest {
         PoubelleDAO poubelleDAO = new PoubelleDAO(conn);
 
         try {
+            // 🔹 Nettoyage des données avant le test
+            try (Statement stmt = conn.createStatement()) {
+                stmt.executeUpdate("DELETE FROM poubelle_intelligente");
+                System.out.println("✅ Toutes les poubelles ont été supprimées avant le test.");
+            } catch (SQLException e) {
+                System.err.println("❌ Erreur lors du nettoyage des poubelles : " + e.getMessage());
+            }
+
             // 🔹 Test 1 : Insertion d'une poubelle
             System.out.println("\n🔹 Test 1 : Ajout d'une poubelle...");
             PoubelleIntelligente poubelle = new PoubelleIntelligente(101, 10000, TypePoubelle.BLEUE, 48.8566, 2.3522);
             poubelleDAO.ajouterPoubelle(poubelle);
-            System.out.println(" Poubelle ajoutée avec succès !");
+            System.out.println("✅ Poubelle ajoutée avec succès !");
 
             // 🔹 Test 2 : Récupération depuis la base
-            System.out.println("\n Test 2 : Récupération de la poubelle...");
+            System.out.println("\n🔹 Test 2 : Récupération de la poubelle...");
             PoubelleIntelligente recuperee = poubelleDAO.recupererParId(101);
             if (recuperee != null) {
-                System.out.println(" Poubelle trouvée : " + recuperee.getId() + ", Type : " + recuperee.getTypePoubelle());
+                System.out.println("✅ Poubelle trouvée : " + recuperee.getId() + ", Type : " + recuperee.getTypePoubelle());
             } else {
-                System.out.println(" Aucune poubelle trouvée avec cet ID.");
+                System.out.println("❌ Aucune poubelle trouvée avec cet ID.");
             }
 
-            //🔹 Test 3 : Suppression de la poubelle
-            //System.out.println("\n🔹 Test 3 : Suppression de la poubelle...");
-            //poubelleDAO.supprimerPoubelle(101);
-            //System.out.println(" Poubelle supprimée.");
+            // 🔹 Test 3 : Suppression de la poubelle
+            System.out.println("\n🔹 Test 3 : Suppression de la poubelle...");
+            poubelleDAO.supprimerPoubelle(101);
+            System.out.println("✅ Poubelle supprimée.");
 
             // Vérification après suppression
             PoubelleIntelligente apresSuppression = poubelleDAO.recupererParId(101);
             if (apresSuppression == null) {
-                System.out.println(" Suppression confirmée, la poubelle n'existe plus.");
+                System.out.println("✅ Suppression confirmée, la poubelle n'existe plus.");
             } else {
-                System.out.println(" La poubelle est toujours présente après suppression !");
+                System.out.println("❌ La poubelle est toujours présente après suppression !");
             }
 
         } catch (SQLException e) {

@@ -6,6 +6,7 @@ import modele.Contrat;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Date;
 import java.util.List;
 
@@ -13,8 +14,15 @@ public class ContratDAOTest {
     public static void main(String[] args) {
         System.out.println("🚀 Début des tests de la classe ContratDAO...");
 
-        // Connexion à la base de données
         try (Connection connection = ConnexionBDD.getConnexion()) {
+            // Nettoyer les tables avant les tests
+            try (Statement stmt = connection.createStatement()) {
+                stmt.executeUpdate("DELETE FROM contrat_partenariat");
+                System.out.println("✅ Données de test supprimées.");
+            } catch (SQLException e) {
+                System.err.println("❌ Erreur lors du nettoyage des données : " + e.getMessage());
+            }
+
             ContratDAO contratDAO = new ContratDAO(connection);
 
             // Création d'un contrat de test
